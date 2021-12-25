@@ -26,6 +26,7 @@ module.exports = {
         tsx: "never",
       },
     ],
+    "no-console": "off",
   },
   settings: {
     "import/resolver": {
