@@ -1,2 +1,1 @@
-const number = 1
-console.log(number)
+import "3_types"
