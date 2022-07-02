@@ -7,7 +7,7 @@ class HitPoint {
   private static readonly MAX = 100
 
   /** 現在ヒットポイント */
-  public value: number
+  public readonly value: number
 
   constructor(value: number) {
     if (value < HitPoint.MIN)
@@ -19,14 +19,14 @@ class HitPoint {
   }
 
   /** ダメージを受ける */
-  damage(damageAmount: number): HitPoint {
+  public damage(damageAmount: number): HitPoint {
     const damaged = this.value - damageAmount
     const corrected = damaged < HitPoint.MIN ? HitPoint.MIN : damaged
     return new HitPoint(corrected)
   }
 
   /** 回復する */
-  recover(recoverAmount: number): HitPoint {
+  public recover(recoverAmount: number): HitPoint {
     const recovered = this.value + recoverAmount
     const corrected = HitPoint.MAX < recovered ? HitPoint.MAX : recovered
     return new HitPoint(corrected)
